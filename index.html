@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio Site </title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      background-color: #141414;
+      color: #e4e4e4;
+      line-height: 1.7;
+    }
+
+    /* ----- NAV ----- */
+    nav {
+      background-color: #1a1a1a;
+      border-bottom: 2px solid #333;
+      padding: 16px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .name {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    nav ul a {
+      text-decoration: none;
+      color: #bbb;
+      font-size: 0.95rem;
+    }
+
+    nav ul a:hover {
+      text-decoration: underline;
+    }
+
+    /* ----- HERO ----- */
+    #hero {
+      padding: 70px 30px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    #hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 14px;
+    }
+
+    #hero h1 span {
+      text-decoration: underline;
+      text-decoration-color: #2f2f2f;
+    }
+
+    #hero p {
+      font-size: 1.05rem;
+      color: #999;
+      margin-bottom: 26px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 22px;
+      background-color: #e4e4e4;
+      color: #141414;
+      text-decoration: none;
+      font-family: Georgia, serif;
+      font-size: 0.95rem;
+      margin-right: 10px;
+      border: 2px solid #e4e4e4;
+    }
+
+    .btn:hover {
+      background-color: transparent;
+      color: #e4e4e4;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: #e4e4e4;
+      border: 2px solid #444;
+    }
+
+    .btn-outline:hover {
+      background-color: #e4e4e4;
+      color: #141414;
+    }
+
+    /* ----- DIVIDER ----- */
+    hr {
+      border: none;
+      border-top: 1px solid #2a2a2a;
+      margin: 0 30px;
+    }
+
+    /* ----- SECTIONS ----- */
+    section {
+      padding: 60px 30px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+      border-left: 4px solid #343434;
+      padding-left: 12px;
+    }
+
+    .section-sub {
+      color: #888;
+      font-size: 0.85rem;
+      margin-bottom: 28px;
+      padding-left: 16px;
+    }
+
+    /* ----- ABOUT ----- */
+    #about p {
+      color: #999;
+      margin-bottom: 12px;
+    }
+
+    .skills-list {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skills-list span {
+      padding: 5px 14px;
+      border: 1px solid #333;
+      font-size: 0.85rem;
+      background: #1e1e1e;
+      color: #ccc;
+    }
+
+    /* ----- PROJECTS ----- */
+    .project {
+      border: 1px solid #2a2a2a;
+      padding: 20px;
+      margin-bottom: 16px;
+      background: #1a1a1a;
+    }
+
+    .project:hover {
+      border-color: #313131;
+    }
+
+    .project h3 {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      color: #e4e4e4;
+    }
+
+    .project p {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .project-tags span {
+      font-size: 0.78rem;
+      background: #ffffff;
+      color: #000000;
+      padding: 2px 10px;
+    }
+
+    /* ----- CONTACT ----- */
+    #contact p {
+      color: #999;
+      margin-bottom: 10px;
+    }
+
+    #contact a {
+      color: #ccc;
+    }
+
+    #contact a:hover {
+      color: #f4a261;
+    }
+
+    .social-links {
+      margin-top: 20px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #444;
+      color: #aaa;
+      padding-bottom: 2px;
+    }
+
+    .social-links a:hover {
+      border-color: #f4a261;
+      color: #f4a261;
+    }
+
+    /* ----- FOOTER ----- */
+    footer {
+      text-align: center;
+      padding: 24px;
+      border-top: 1px solid #ddd;
+      font-size: 0.82rem;
+      color: #aaa;
+    }
+
+    /* ----- MOBILE ----- */
+    @media (max-width: 600px) {
+      nav ul { gap: 14px; }
+      #hero h1 { font-size: 1.8rem; }
+      section { padding: 40px 20px; }
+    }
+  </style>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="name">Shivam.</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div id="hero">
+    <h1>Hi, I'm <span>Shivam</span> 👋</h1>
+    <p>
+      I'm a self-taught web developer from Maharashtra, India.
+      I just finished 12th grade and I'm learning HTML, CSS, JavaScript and Python.
+      I love building things for the web.
+    </p>
+    <a href="#projects" class="btn">See My Work</a>
+    <a href="#contact" class="btn btn-outline">Contact Me</a>
+  </div>
+
+  <hr />
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p class="section-sub">A little about who I am</p>
+
+    <p>
+      I'm 18 years old and just passed my 12th exams. After that I decided to
+      learn web development on my own. I started with HTML, then CSS, and now
+      I'm learning JavaScript. Python is also on my list!
+    </p>
+    <p>
+      I spend most of my free time watching tutorials, building small projects,
+      and practicing code. I want to become a full-stack developer one day.
+    </p>
+
+    <div class="skills-list">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript (learning)</span>
+      <span>Python (learning)</span>
+      <span>Responsive Design</span>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <p class="section-sub">Small things I built while learning</p>
+
+    <div class="project">
+      <h3>🧮 Manine kuch Nahi Banaya Abhi tak 😂</h3>
+      <p>Abhi Abhi sikna Start Kiya hai.</p>
+      <div class="project-tags">
+        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+      </div>
+    </div>
+
+
+    <div class="project">
+      <h3>🌐 This Portfolio</h3>
+      <p>The website you're looking at right now. Made fully by me using plain HTML and CSS.</p>
+      <div class="project-tags">
+        <span>HTML</span><span>CSS</span>
+      </div>
+    </div>
+
+  </section>
+
+  <hr />
+
+  <!-- SKILLS -->
+
+<section id="skills">
+  <h2>Skills</h2>
+  <p class="section-sub">Technologies I'm learning and working with</p>
+
+  <div class="project">
+    <h3>💻 Frontend Development</h3>
+
+```
+<div class="project-tags">
+  <span>HTML5</span>
+  <span>CSS3</span>
+  <span>JavaScript</span>
+  <span>React.js</span>
+</div>
+```
+
+  </div>
+</section>
+
+
+
+
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Me </h2>
+    <p class="section-sub">Let's connect!</p>
+
+    <p>I'm open to freelance work, internships or just a friendly talk. Feel free to reach out!</p>
+    <p>📧 Email: <a href="mailto:shivamnburadkar@gmail.com">shivamnburadkar@gmail.com</a></p>
+    <p>📍 Maharashtra, India</p>
+
+    <div class="social-links">
+      <a href="https://github.com/shivamnburadkar-png" target="_blank">GitHub →</a>
+      <!--<a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn →</a> -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    Made by Shivam  &nbsp;·&nbsp; 2026
+  </footer>
+
+</body>
+</html>
